@@ -8,32 +8,43 @@ class Horoscope::CLI
   end
   
   def get_period
-    @period = ["Daily Horoscope", "Weekly Horoscope", "Monthly Horoscope"]
+    
+    @period = Horoscope::Period.all
   end
+
+  # def get_period
+  #   @period = ["Daily Horoscope", "Weekly Horoscope", "Monthly Horoscope"]
+  # end
   
   def list_period
-    puts "\nChoose your Daily, Weekly or Monthly Horoscope here:\n"
+    puts "\nChoose your Daily, Weekly or Monthly Horoscope by choosing its index:\n"
     @period.each.with_index(1) do |period, index|
-      puts "#{index}. #{period}"
+      puts "#{index}. #{period.term}"
     end
   end
   
   def get_user_period
     user_period = gets.strip.to_i
-    show_zodiac_for(user_period) if valid_period(user_period, @period)
+    if valid_period?(user_period)
+      show_zodiac_for(user_period)
+    else puts "Wrong input! Try again!" 
+      get_user_period
+    end
   end
   
-  def valid_period?(index, @period)
+  def valid_period?(index)
     index.to_i <= @period.length && index.to_i > 0 
   end
   
   def show_zodiac_for(user_period)
     puts "Zodiac signs"
-    Horoscope::Zodiac.all.each.with_index(1) do |zodiac|
-      puts zodiac.name
-    end
-    
   end
-    
+
 end
-    
+
+
+
+  # def find_zodiac(mmdd)
+  #   mmdd = 
+  #   puts "Your zodiac sign is "
+  # end
