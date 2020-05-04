@@ -19,15 +19,21 @@ class Horoscope::CLI
   end
   
   def get_user_period
-    user_period = gets.strip
-    # if valid_period(user_period.to_i, @period)
-    
-    # end
+    user_period = gets.strip.to_i
+    show_zodiac_for(user_period) if valid_period(user_period, @period)
   end
   
-  def valid_period?(index)
+  def valid_period?(index, @period)
     index.to_i <= @period.length && index.to_i > 0 
   end
   
+  def show_zodiac_for(user_period)
+    puts "Zodiac signs"
+    Horoscope::Zodiac.all.each.with_index(1) do |zodiac|
+      puts zodiac.name
+    end
+    
+  end
+    
 end
     
