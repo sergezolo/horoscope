@@ -8,7 +8,6 @@ class Horoscope::CLI
   end
   
   def get_period
-    
     @period = Horoscope::Period.all
   end
 
