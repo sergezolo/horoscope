@@ -35,7 +35,6 @@ class Horoscope::CLI
     sign = @zodiac[user_zodiac - 1]
     sign.get_paragraph
     puts "Today's Horoscope for #{sign.sign}:"
-    binding.pry
   end
 
 end
