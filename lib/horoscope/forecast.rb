@@ -5,10 +5,10 @@ class Horoscope::Forecast
   @@all = []
   
   def initialize(text, sign)
-    @text = text
+    @text = []
     @sign = sign
     @@all << self
-    @sign.forecast << self
+    zodiac.sign << self
   end
   
   def self.all
