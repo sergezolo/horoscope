@@ -1,7 +1,7 @@
 class Horoscope::Scraper
   
-  def scrape_period
-    doc = Nokogiri::HTML(open("https://www.elle.com/horoscopes"))
+  def self.scrape_zodiac
+    doc = Nokogiri::HTML(open("https://www.elle.com/horoscopes/daily/"))
     binding.pry
   end
   
