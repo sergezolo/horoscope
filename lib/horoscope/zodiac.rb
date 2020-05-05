@@ -1,7 +1,6 @@
 class Horoscope::Zodiac
   
-  attr_accessor :sign
-  attr_writer :paragraph
+  attr_accessor :sign, :paragraph
   
   @@all = []
   
@@ -16,7 +15,7 @@ class Horoscope::Zodiac
     @@all
   end
   
-  def paragraph
+  def get_paragraph
     Horoscope::Scraper.scrape_paragraph(self) if @paragraph.empty?
     @paragraph
   end

@@ -8,6 +8,7 @@ class Horoscope::Paragraph
     @text = text
     @sign = sign
     @@all << self
+    @sign.paragraph << self
   end
   
   def self.all
