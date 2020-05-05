@@ -8,7 +8,6 @@ class Horoscope::CLI
   end
   
   def get_zodiac
-    
     @zodiac = Horoscope::Zodiac.all
   end
 
@@ -33,7 +32,8 @@ class Horoscope::CLI
   end
   
   def show_zodiac_for(user_zodiac)
-    puts "Zodiac signs"
+    sign = @zodiac[user_zodiac - 1]
+    puts "Today's Horoscope for #{sign.sign}:"
   end
 
 end
