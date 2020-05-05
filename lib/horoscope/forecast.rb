@@ -1,4 +1,4 @@
-class Horoscope::Paragraph
+class Horoscope::Forecast
   
   attr_accessor :text, :sign
 
@@ -8,7 +8,7 @@ class Horoscope::Paragraph
     @text = text
     @sign = sign
     @@all << self
-    @sign.paragraph << self
+    @sign.forecast << self
   end
   
   def self.all

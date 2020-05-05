@@ -1,7 +1,8 @@
 class Horoscope::CLI
   
   def call
-    puts "\nWonder what the stars have aligned for you today? Find out in this Daily Horoscope App!\n"
+    puts "\nWonder what the stars have aligned for you today? 
+    Find out in this Daily Horoscope App!\n"
     get_zodiac
     list_zodiac
     get_user_zodiac
@@ -27,13 +28,13 @@ class Horoscope::CLI
     end
   end
   
-  def valid_index?(index)
-    index.to_i <= @zodiac.length && index.to_i > 0 
+  def valid_index?(input)
+    input.to_i <= @zodiac.length && input.to_i > 0 
   end
   
   def show_zodiac_for(user_zodiac)
     sign = @zodiac[user_zodiac - 1]
-    sign.get_paragraph
+    sign.get_forecast
     puts "Today's Horoscope for #{sign.sign}:"
   end
 

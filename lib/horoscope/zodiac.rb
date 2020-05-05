@@ -1,12 +1,12 @@
 class Horoscope::Zodiac
   
-  attr_accessor :sign, :paragraph
+  attr_accessor :sign, :forecast
   
   @@all = []
   
   def initialize(sign)
     @sign = sign
-    @paragraph = []
+    @forecast = []
     @@all << self
   end
   
@@ -15,9 +15,9 @@ class Horoscope::Zodiac
     @@all
   end
   
-  def get_paragraph
-    Horoscope::Scraper.scrape_paragraph(self) if @paragraph.empty?
-    @paragraph
+  def get_forecast
+    Horoscope::Scraper.scrape_forecast(self) if @forecast.empty?
+    @forecast
   end
   
 end

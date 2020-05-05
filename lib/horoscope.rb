@@ -1,7 +1,7 @@
 require_relative "horoscope/version"
 require_relative "horoscope/cli"
 require_relative "horoscope/zodiac"
-require_relative "horoscope/paragraph"
+require_relative "horoscope/forecast"
 require_relative "horoscope/scraper"
 
 require "pry"
