@@ -33,7 +33,9 @@ class Horoscope::CLI
   
   def show_zodiac_for(user_zodiac)
     sign = @zodiac[user_zodiac - 1]
+    paragraph = sign.paragraph
     puts "Today's Horoscope for #{sign.sign}:"
+    binding.pry
   end
 
 end

@@ -11,4 +11,9 @@ class Horoscope::Scraper
     end
   end
   
+  def self.scrape_paragraph(sign)
+    Horoscope::Paragraph.new("text", sign) 
+    Horoscope::Paragraph.new("sdgsdgtext", sign) 
+  end
+  
 end
