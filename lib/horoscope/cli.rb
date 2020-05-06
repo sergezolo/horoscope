@@ -11,16 +11,17 @@ class Horoscope::CLI
 		get_zodiac
 		list_zodiac
 		get_user_zodiac	
-			while @input != "exit"
-				if @input.to_i <= @zodiac.length && @input.to_i > 0
-					show_forecast
-				elsif @input == "list" 
-					list_zodiac
-				else puts "Wrong input! Try again!"
-					get_user_zodiac
-				end
-			end
-			puts "Thank you for swinging by! See you tomorrow!"  
+		show_forecast
+		# 	while @input != "exit"
+		# 		if @input.to_i <= @zodiac.length && @input.to_i > 0
+		# 			show_forecast
+		# 		elsif @input == "list" 
+		# 			list_zodiac
+		# 		else puts "Wrong input! Try again!"
+		# 			get_user_zodiac
+		# 		end
+		# 	end
+		# 	puts "Thank you for swinging by! See you tomorrow!"  
   end
 
 	def get_zodiac
@@ -36,7 +37,7 @@ class Horoscope::CLI
 	end
 
 	def show_forecast
-		sign = @zodiac[input.to_i -1]
+		sign = @zodiac[@input.to_i - 1]
 		puts "Today's Horoscope for #{sign.sign}:"
 		sign.forecast
 	end
