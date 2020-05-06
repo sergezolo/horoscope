@@ -10,8 +10,7 @@ class Horoscope::CLI
     
       while input != "exit"
         if input.to_i <= @zodiac.length && input.to_i > 0
-          sign = @zodiac[input - 1]
-          sign.get_forecast
+          sign = @zodiac[input.to_i - 1]
           puts "Today's Horoscope for #{sign.sign}:"
         elsif input == "list"
           list_zodiac
