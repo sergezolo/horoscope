@@ -5,7 +5,17 @@ class Horoscope::CLI
     Find out in this Daily Horoscope App!\n"
     get_zodiac
     list_zodiac
-    get_user_zodiac
+    input = gets.strip.downcase
+    
+    while input != "exit"
+      if input.to_i <= @zodiac.length && input.to_i > 0
+        show_zodiac_for(input)
+      elsif input == "list"
+        list_zodiac
+      else puts "Wrong input! Try again!" 
+        get_user_zodiac
+      end
+    end  
   end
   
   def get_zodiac
@@ -18,22 +28,9 @@ class Horoscope::CLI
       puts "#{index}. #{zodiac.sign}"
     end
   end
-  
-  def get_user_zodiac
-    user_zodiac = gets.strip.to_i
-    if valid_index?(user_zodiac)
-      show_zodiac_for(user_zodiac)
-    else puts "Wrong input! Try again!" 
-      get_user_zodiac
-    end
-  end
-  
-  def valid_index?(input)
-    input.to_i <= @zodiac.length && input.to_i > 0 
-  end
-  
-  def show_zodiac_for(user_zodiac)
-    sign = @zodiac[user_zodiac - 1]
+
+  def show_zodiac_for(input)
+    sign = @zodiac[input - 1]
     sign.get_forecast
     puts "Today's Horoscope for #{sign.sign}:"
   end
