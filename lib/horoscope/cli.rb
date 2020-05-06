@@ -9,12 +9,15 @@ class Horoscope::CLI
     
     while input != "exit"
       if input.to_i <= @zodiac.length && input.to_i > 0
-        show_zodiac_for(input)
+        sign = @zodiac[input - 1]
+        sign.get_forecast
+        puts "Today's Horoscope for #{sign.sign}:"
       elsif input == "list"
         list_zodiac
-      else puts "Wrong input! Try again!" 
-        get_user_zodiac
+      else puts "Wrong input! Try again!"
+        
       end
+      
     end  
   end
   
@@ -27,12 +30,6 @@ class Horoscope::CLI
     @zodiac.each.with_index(1) do |zodiac, index|
       puts "#{index}. #{zodiac.sign}"
     end
-  end
-
-  def show_zodiac_for(input)
-    sign = @zodiac[input - 1]
-    sign.get_forecast
-    puts "Today's Horoscope for #{sign.sign}:"
   end
 
 end
