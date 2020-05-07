@@ -36,12 +36,11 @@ class Horoscope::CLI
 	end
 
 	def list_zodiac
-	  
 	  array_1 = []
 		array_2 = []
-	  
-		@zodiac.each.with_index(1) do |zodiac, index|
-		  array_1 << ("#{index}. " + "#{zodiac.sign}").to_s
+	  @zodiac.each.with_index(1) do |zodiac, index|
+	    item = (("#{index}. " + "#{zodiac.sign}").to_s + " " * 25)[0,25]
+		  array_1 << item
 		end
 		
 		array_2 = array_1.group_by.with_index do |sign, index|
@@ -64,6 +63,7 @@ class Horoscope::CLI
 	def show_forecast
 		sign = @zodiac[@input.to_i - 1]
 		puts "Today's Horoscope for #{sign.sign}:"
+		
 		puts sign.forecast
 	end
 
