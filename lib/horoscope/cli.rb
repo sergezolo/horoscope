@@ -1,14 +1,19 @@
 class Horoscope::CLI
   
+  @@grn="\e[1;32m"
+  @@blu="\e[1;34m"
+  @@mag="\e[1;35m"
+  @@cyn="\e[1;36m"
+  @@white="\e[0m"
+  
 	def call
 
-	puts "\nWonder what the stars have aligned for you today? 
-	Find out in this Daily Horoscope App!\n"
+	puts "\n#{@@blu}Wonder what the stars have aligned for you today? 
+	  Find out in this Daily Horoscope App!#{@@white}\n"
     
 		@zodiac = Horoscope::Zodiac.all
 		@input = ""
 		
-		start = gets.strip
 		get_zodiac
 		list_zodiac
 		get_user_zodiac	
