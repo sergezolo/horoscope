@@ -12,7 +12,7 @@ class Horoscope::Scraper
   def self.scrape_forecast(sign)
     url = "https://astrostyle.com/horoscopes/daily/#{sign.sign}"
     doc = Nokogiri::HTML(open(url))
-    article = doc.css("div.gdlr-item.gdlr-content-item article div.horoscope-content p")
+    article = doc.css("div.gdlr-item.gdlr-content-item article div.horoscope-content p")[0]
     sign.forecast = article.text
   end
   
