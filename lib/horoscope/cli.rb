@@ -9,7 +9,7 @@ class Horoscope::CLI
 	def call
 
 	puts "\n#{@@blu}Wonder what the stars have aligned for you today? 
-	  Find out in this Daily Horoscope App!#{@@white}\n"
+	Find out in this Daily Horoscope App!#{@@white}\n"
     
 		@zodiac = Horoscope::Zodiac.all
 		@input = ""
@@ -36,11 +36,29 @@ class Horoscope::CLI
 	end
 
 	def list_zodiac
-		@zodiac.each.with_index(1) {|zodiac, index| puts "#{index}. #{zodiac.sign}"}
-	end
+	  
+	  array_1 = []
+		array_2 = []
+	  
+		@zodiac.each.with_index(1) do |zodiac, index|
+		  array_1 << ("#{index}. " + "#{zodiac.sign}").to_s
+		end
+		
+		array_2 = array_1.group_by.with_index do |sign, index|
+		            index % (@zodiac.length / 2)
+		          end.values
+
+    array_2.each do |row|
+      row.each do |col|
+        print col.to_s + "      "
+      end
+    puts
+    end
+	end	
+	
 	
 	def get_user_zodiac
-		@input = gets.strip.downcase
+	  @input = gets.strip.downcase
 	end
 
 	def show_forecast
