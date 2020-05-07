@@ -39,7 +39,8 @@ class Horoscope::CLI
 	def show_forecast
 		sign = @zodiac[@input.to_i - 1]
 		puts "Today's Horoscope for #{sign.sign}:"
-		sign.forecast
+		sign.get_forecast
+		puts sign.forecast
 	end
 
 end

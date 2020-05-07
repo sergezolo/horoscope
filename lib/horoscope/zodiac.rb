@@ -6,7 +6,7 @@ class Horoscope::Zodiac
   
   def initialize(sign)
     @sign = sign
-    @forecast = []
+    @forecast = forecast
     @@all << self
   end
   
@@ -16,7 +16,7 @@ class Horoscope::Zodiac
   end
   
   def get_forecast
-    Horoscope::Scraper.scrape_forecast(self) if @forecast.empty?
+    Horoscope::Scraper.scrape_forecast(self) if @forecast.nil?
     @forecast
   end
   
