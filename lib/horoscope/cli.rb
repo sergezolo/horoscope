@@ -2,12 +2,13 @@ class Horoscope::CLI
   
 	def call
 
-		puts "\nWonder what the stars have aligned for you today? 
-		Find out in this Daily Horoscope App!\n"
+	puts "\nWonder what the stars have aligned for you today? 
+	Find out in this Daily Horoscope App!\n"
     
 		@zodiac = Horoscope::Zodiac.all
 		@input = ""
-
+		
+		start = gets.strip
 		get_zodiac
 		list_zodiac
 		get_user_zodiac	
@@ -40,7 +41,6 @@ class Horoscope::CLI
 	def show_forecast
 		sign = @zodiac[@input.to_i - 1]
 		puts "Today's Horoscope for #{sign.sign}:"
-		sign.get_forecast
 		puts sign.forecast
 	end
 
