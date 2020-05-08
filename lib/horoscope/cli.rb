@@ -103,8 +103,20 @@ class Horoscope::CLI
         else
           sign
         end
+        
+        @zodiac.each do |sgn|
+          if sgn == sign
+            
+          end
+        end
+          
+          
+        
         puts "Your Zodiac Sign is #{sign}!"
-        puts ""
+        puts "Today's forecast:"
+        
+        
+        sign.forecast
         menu
       end
     end
