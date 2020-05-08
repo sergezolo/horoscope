@@ -20,10 +20,11 @@ class Horoscope::CLI
 
 			while @input != "exit"
 				if @input.to_i <= @zodiac.length && @input.to_i > 0
-
 					show_forecast
 				elsif @input == "list" 
 					list_zodiac
+				elsif @input == "find"
+				  find_zodiac
 				else 
 				  puts "Wrong input! Try again!"
 				end
@@ -102,9 +103,11 @@ class Horoscope::CLI
         else
           sign
         end
+        puts "Your Zodiac Sign is #{sign}!"
+        puts ""
+        menu
       end
     end
-
   end
 
 end
