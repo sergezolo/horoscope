@@ -75,11 +75,31 @@ class Horoscope::CLI
 	  puts "#{@@mag}Type #{@@cyn}list#{@@mag} to see the list of all Zodiac Signs."
 	  puts "#{@@mag}Type #{@@cyn}exit#{@@mag} to exit the Horoscope App!#{@@white}"
 	end
+	
+	def find_zodiac
+	  
+	  constant = {
+	    "Capricorn" => [0101, 0119],
+	    "Aquarius" => [0120, 0218],
+	    "Pisces" => [0219, 0320],
+	    "Aries" => [0321, 0419],
+	    "Taurus" => [0420, 0520],
+	    "Gemini" => [0521, 0620],
+	    "Cancer" => [0621, 0722],
+	    "Leo" => [0723, 0822],
+	    "Virgo" => [0823, 0922],
+	    "Libra" => [0923, 1022],
+	    "Scorpio" => [1023, 1121],
+	    "Sagittarius" => [1122, 1221],
+	    "Capricorn2" => [1222, 1231]
+	  }
+	    
+	    
+	  
+    mmdd = 
+    puts "Your zodiac sign is "
+  end
 
 end
 
 
-  # def find_zodiac(mmdd)
-  #   mmdd = 
-  #   puts "Your zodiac sign is "
-  # end
