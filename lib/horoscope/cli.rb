@@ -78,28 +78,37 @@ class Horoscope::CLI
 	
 	def find_zodiac
 	  
-	  constant = {
-	    "Capricorn" => [0101, 0119],
-	    "Aquarius" => [0120, 0218],
-	    "Pisces" => [0219, 0320],
-	    "Aries" => [0321, 0419],
-	    "Taurus" => [0420, 0520],
-	    "Gemini" => [0521, 0620],
-	    "Cancer" => [0621, 0722],
-	    "Leo" => [0723, 0822],
-	    "Virgo" => [0823, 0922],
-	    "Libra" => [0923, 1022],
-	    "Scorpio" => [1023, 1121],
-	    "Sagittarius" => [1122, 1221],
-	    "Capricorn2" => [1222, 1231]
-	  }
-	    
-	    
+	  zodiacs = {"Capricorn" => [101, 119], "Aquarius" => [120, 218], "Pisces" => [219, 320], "Aries" => [321, 419], "Taurus" => [420, 520], "Gemini" => [521, 620], "Cancer" => [621, 722], "Leo" => [723, 822], "Virgo" => [823, 922], "Libra" => [923, 1022], "Scorpio" => [1023, 1121], "Sagittarius" => [1122, 1221], "Capricorn2" => [1222, 1231]}
 	  
-    mmdd = 
-    puts "Your zodiac sign is "
+	  puts "#{@@blu}Please enter the Date of Birth in format #{@@cyn}MMDD#{@@white}"
+	  
+	  string = gets.strip
+	  month = string[0..1]
+	  date = string[2..3]
+	  
+	  if month.to_i < 13 && date.to_i < 32
+	    if month.to_i < 10
+	      month = month.gsub("0", "")
+	    end
+	    number = month + date
+	  else
+	    puts "Wrong date! Try again!"
+	  end
+	  
+    zodiacs.find do |sign, array|
+      if array[0] <= number.to_i && array[1] >= number.to_i
+        if sign == "Capricorn2"
+          sign= "Capricorn"
+        else
+          sign
+        end
+      end
+    end
+
   end
 
 end
+
+
 
 
