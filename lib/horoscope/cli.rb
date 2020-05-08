@@ -70,10 +70,10 @@ class Horoscope::CLI
 	
 	def menu
 	  puts ""
-	  puts "#{@@mag}Type #{@@cyn}1-12#{@@mag} to the forecast for your Zodiac Sign!"
+	  puts "#{@@mag}Type #{@@cyn}1-12#{@@mag} to see a forecast for your Zodiac Sign!"
 	  puts "#{@@mag}Type #{@@cyn}find#{@@mag} to find out the Zodiac Sign by the Date of Birth!"
 	  puts "#{@@mag}Type #{@@cyn}list#{@@mag} to see the list of all Zodiac Signs."
-	  puts "#{@@mag}Type #{@@cyn}exit#{@@mag} to exit the Horoscope App!e#{@@white}"
+	  puts "#{@@mag}Type #{@@cyn}exit#{@@mag} to exit the Horoscope App!#{@@white}"
 	end
 
 end
