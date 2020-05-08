@@ -20,6 +20,7 @@ class Horoscope::CLI
 
 			while @input != "exit"
 				if @input.to_i <= @zodiac.length && @input.to_i > 0
+				  puts "\n#{@@grn}Today's Horoscope for #{sign.sign}:#{@@white}\n"
 					show_forecast
 				elsif @input == "list" 
 					list_zodiac
@@ -39,17 +40,15 @@ class Horoscope::CLI
 	  array_1 = []
 		array_2 = []
 	  @zodiac.each.with_index(1) do |zodiac, index|
-	    item = (("#{index}. " + "#{zodiac.sign}").to_s + " " * 25)[0,25]
+	    item = (("#{index}. " + "#{zodiac.sign}").to_s + " " * 15)[0,17]
 		  array_1 << item
 		end
-		
 		array_2 = array_1.group_by.with_index do |sign, index|
-		            index % (@zodiac.length / 2)
+		            index % (@zodiac.length / 3)
 		          end.values
-
     array_2.each do |row|
       row.each do |col|
-        print col.to_s + "      "
+        print col.to_s + " "
       end
     puts
     end
@@ -62,8 +61,6 @@ class Horoscope::CLI
 
 	def show_forecast
 		sign = @zodiac[@input.to_i - 1]
-		puts "Today's Horoscope for #{sign.sign}:"
-		
 		puts sign.forecast
 	end
 
