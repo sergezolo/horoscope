@@ -10,7 +10,7 @@ class Horoscope::CLI
 
 	puts "\n#{@@blu}Wonder what the stars have aligned for you today? 
 	Find out in this Daily Horoscope App!#{@@white}\n"
-    
+  puts ""  
 		@zodiac = Horoscope::Zodiac.all
 		@input = ""
 		
@@ -20,7 +20,7 @@ class Horoscope::CLI
 
 			while @input != "exit"
 				if @input.to_i <= @zodiac.length && @input.to_i > 0
-				  puts "\n#{@@grn}Today's Horoscope for #{sign.sign}:#{@@white}\n"
+
 					show_forecast
 				elsif @input == "list" 
 					list_zodiac
@@ -62,11 +62,15 @@ class Horoscope::CLI
 
 	def show_forecast
 		sign = @zodiac[@input.to_i - 1]
+		puts "\n#{@@grn}Today's Horoscope for #{sign.sign}:#{@@white}\n"
+		puts ""
 		puts sign.forecast
 		menu
 	end
 	
 	def menu
+	  puts ""
+	  puts "#{@@mag}Type #{@@cyn}1-12#{@@mag} to the forecast for your Zodiac Sign!"
 	  puts "#{@@mag}Type #{@@cyn}find#{@@mag} to find out the Zodiac Sign by the Date of Birth!"
 	  puts "#{@@mag}Type #{@@cyn}list#{@@mag} to see the list of all Zodiac Signs."
 	  puts "#{@@mag}Type #{@@cyn}exit#{@@mag} to exit the Horoscope App!e#{@@white}"
