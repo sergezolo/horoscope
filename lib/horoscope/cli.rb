@@ -29,7 +29,7 @@ class Horoscope::CLI
 				end
 				get_user_zodiac
 			end
-			puts "Thank you for swinging by! See you tomorrow!"  
+			puts "\n#{@@blu}Thank you for swinging by! See you tomorrow!#{@@white}\n"  
   end
 
 	def get_zodiac
@@ -52,6 +52,7 @@ class Horoscope::CLI
       end
     puts
     end
+    menu
 	end	
 	
 	
@@ -62,6 +63,13 @@ class Horoscope::CLI
 	def show_forecast
 		sign = @zodiac[@input.to_i - 1]
 		puts sign.forecast
+		menu
+	end
+	
+	def menu
+	  puts "#{@@mag}Type #{@@cyn}find#{@@mag} to find out the Zodiac Sign by the Date of Birth!"
+	  puts "#{@@mag}Type #{@@cyn}list#{@@mag} to see the list of all Zodiac Signs."
+	  puts "#{@@mag}Type #{@@cyn}exit#{@@mag} to exit the Horoscope App!e#{@@white}"
 	end
 
 end
