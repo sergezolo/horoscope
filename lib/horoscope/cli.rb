@@ -65,6 +65,7 @@ class Horoscope::CLI
 		sign = @zodiac[@input.to_i - 1]
 		puts "\n#{@@grn}Today's Horoscope for #{sign.sign}:#{@@white}\n"
 		puts ""
+		sign.get_forecast
 		puts sign.forecast
 		menu
 	end

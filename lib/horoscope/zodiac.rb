@@ -8,7 +8,6 @@ class Horoscope::Zodiac
     @sign = sign
     @forecast = forecast
     @@all << self
-    get_forecast
   end
   
   def self.all
