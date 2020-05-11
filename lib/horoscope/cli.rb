@@ -22,6 +22,7 @@ class Horoscope::CLI
 				if @input.to_i <= @zodiac.length && @input.to_i > 0
 					show_forecast
 				elsif @input == "list" 
+				  system("clear")
 					list_zodiac
 				elsif @input == "find"
 				  find_zodiac
@@ -62,6 +63,7 @@ class Horoscope::CLI
 	end
 
 	def show_forecast
+	  system("clear")
 		sign = @zodiac[@input.to_i - 1]
 		puts "\n#{@@grn}Today's Horoscope for #{sign.sign}:#{@@white}\n"
 		puts ""
@@ -79,7 +81,7 @@ class Horoscope::CLI
 	end
 	
 	def find_zodiac
-	  
+	  system("clear")
 	  zodiacs = {"Capricorn" => [101, 119], "Aquarius" => [120, 218], "Pisces" => [219, 320], "Aries" => [321, 419], "Taurus" => [420, 520], "Gemini" => [521, 620], "Cancer" => [621, 722], "Leo" => [723, 822], "Virgo" => [823, 922], "Libra" => [923, 1022], "Scorpio" => [1023, 1121], "Sagittarius" => [1122, 1221], "Capricorn2" => [1222, 1231]}
 	  
 	  puts "#{@@blu}Please enter the Date of Birth in format #{@@cyn}MMDD#{@@white}"
@@ -107,6 +109,14 @@ class Horoscope::CLI
 
         puts "Your Zodiac Sign is #{sign}!"
         
+        @zodiac.each do |item|
+          if item == sign
+            @zodiac[item].get_forecast
+           
+          end
+           puts sign.forecast
+        end
+            
         
         puts "Today's forecast:"
         binding.pry
