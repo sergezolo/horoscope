@@ -31,6 +31,7 @@ class Horoscope::CLI
 				end
 				get_user_zodiac
 			end
+			system("clear")
 			puts "\n#{@@blu}Thank you for swinging by! See you tomorrow!#{@@white}\n"  
   end
 
