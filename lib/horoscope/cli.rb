@@ -4,6 +4,7 @@ class Horoscope::CLI
   @@blu="\e[1;34m"
   @@mag="\e[1;35m"
   @@cyn="\e[1;36m"
+  @@red="\e[1;31m"
   @@white="\e[0m"
   
 	def call
@@ -27,7 +28,7 @@ class Horoscope::CLI
 				elsif @input == "find"
 				  find_zodiac
 				else 
-				  puts "Wrong input! Try again!"
+				  puts "#{@@red}Wrong input! Try again!#{@@white}"
 				end
 				get_user_zodiac
 			end
@@ -97,7 +98,7 @@ class Horoscope::CLI
 	    end
 	    number = month + date
 	  else
-	    puts "Wrong date! Try again!"
+	    puts "#{@@red}Wrong date! Type #{@@mag}find#{@@red} to try again!#{@@white}"
 	  end
 	  
     zodiacs.find do |sign, array|
