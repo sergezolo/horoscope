@@ -107,21 +107,19 @@ class Horoscope::CLI
           sign
         end
 
-        puts "Your Zodiac Sign is #{sign}!"
+        puts "#{@@cyn}Your Zodiac Sign is #{sign}!#{@@mag}"
         
         @zodiac.each_with_index do |item, index|
-          if item == sign
+          if item.sign == sign
             sign = @zodiac[index]
-            find_zodiac
-           
           end
-           
         end
         
-        puts "Today's forecast:"
-        binding.pry
-
-        menu
+	    	puts "\n#{@@grn}Today's Horoscope for #{sign.sign}:#{@@white}\n"
+	    	puts ""
+    		sign.get_forecast
+    		puts sign.forecast
+	    	menu
       end
     end
   end
