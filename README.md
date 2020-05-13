@@ -4,23 +4,21 @@ Wonder what the stars have aligned for you today? Find out in this Daily Horosco
 
 ## Installation
 
-Add this line to your application's Gemfile:
+1) To clone this application just type: 
 
-```ruby
-gem 'horoscope'
-```
+  git clone git@github.com:sergezolo/horoscope.gitem 'horoscope'
 
-And then execute:
+2) Open horoscope directory by typing:
 
-    $ bundle
+  cd horoscope
+  
+3) And then execute additional gems by typing:
 
-Or install it yourself as:
-
-    $ gem install horoscope
+  bundle install
 
 ## Usage
 
-TODO: Write usage instructions here
+This App is very easy to use. Just type './bin/horoscope' from your horoscope directory to start the app and follow the instructions on the screen! 
 
 ## Development
 
