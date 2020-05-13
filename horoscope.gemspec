@@ -1,16 +1,15 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "horoscope/version"
+require "horoscope/version 1.0"
 
 Gem::Specification.new do |spec|
   spec.name          = "horoscope"
   spec.version       = Horoscope::VERSION
-  spec.authors       = ["'Sergey Zolotukhin'"]
-  spec.email         = ["'zolotukhinsereg@gmail.com'"]
+  spec.authors       = ["Sergey Zolotukhin"]
+  spec.email         = ["zolotukhinsereg@gmail.com"]
 
-  spec.summary       = %q{Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
+  spec.summary       = %q{This Daily horoscope App has an accurate forecast for every sign!}
   spec.homepage      = "https://github.com/sergezolo/horoscope.git"
   spec.license       = "MIT"
 
