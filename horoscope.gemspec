@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sergey Zolotukhin"]
   spec.email         = ["zolotukhinsereg@gmail.com"]
 
-  spec.summary       = %q{This Daily horoscope App has an accurate forecast for every sign!}
+  spec.summary       = %q{This Daily Horoscope App has an accurate forecast for every Zodiac Sign and allows you to learn your Zodiac Sign by date of birth!}
   spec.homepage      = "https://github.com/sergezolo/horoscope.git"
   spec.license       = "MIT"
 
